@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+/data/ResNet-18_audio_features.h5
+/data/ResNexT-101_3D_video_features.h5
