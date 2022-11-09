@@ -4,7 +4,7 @@ from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 import logging
 import torch
 from torch.utils.data import DataLoader
-from torch.optim import Adam
+# from torch.optim import Adam
 import time
 import os
 import numpy as np
@@ -12,8 +12,8 @@ import random
 import pandas as pd
 from dataset import ShotsDataset
 from model import CutsModel, CutsLoss
-from config import Config, backward_compatible_config, dump_config_details_to_tensorboard
-
+# from config import Config, backward_compatible_config, dump_config_details_to_tensorboard
+# from config import backward_compatible_config
 def create_datasets(config, args):
     datasets, data_loaders = {}, {}
     if 'train' in args.split:
@@ -123,7 +123,7 @@ def main(args):
     
     checkpoint = torch.load(f"{args.log_dir}")
     config = checkpoint['config']
-    config = backward_compatible_config(config)
+    # config = backward_compatible_config(config)
 
     logging.info(f'Seeding with seed {config["seed"]}')
     np.random.seed(config['seed'])
