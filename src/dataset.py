@@ -538,7 +538,8 @@ class ShotsDataset(Dataset):
         return results
 
 def sigmoid(X):
-    return 1/(1+np.exp(-X))
+    # return 1/(1+np.exp(-X))
+    return .5  * (1 + np.tanh(.5 * X))
 
 def ranking_metric(connected_components_sorted, num_cuts=None, top_k_recall=None):
 
